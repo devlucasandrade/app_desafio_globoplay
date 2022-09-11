@@ -1,4 +1,3 @@
-import 'package:app_desafio_globo/src/views/detail_page.dart';
 import 'package:flutter/material.dart';
 import 'src/views/home_page.dart';
 

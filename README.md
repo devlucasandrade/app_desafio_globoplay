@@ -1,16 +1,36 @@
 # app_desafio_globo
 
-A new Flutter project.
+Projeto realizado visando estudo e aplicação para o Desafio Globoplay Mobile.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+* [Introdução](#introdução)
+<!-- * [Screenshots](#screenshots) -->
+* [Observações](#observações)
+<!-- * [Executando](#executando) -->
+<!-- * [Contribua](#contribua) -->
 
-A few resources to get you started if this is your first Flutter project:
+## Introdução
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Projeto para aplicação de estudo sobre consumo de API´s, visando aprender sobre esse consumo, seus métodos e pacotes utilizados, bem como de sua apresentação de dados nas telas, baseado no Desafio Globoplay para mobile.
+<hr>
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+<!-- ## Screenshots
+<p float="left">
+  <img alt="Home Page" src="/screenshots/app_consumo_api.png" width="200" />
+  <img alt="Lista de Todos" src="/screenshots/jsonplaceholdernew.png" width="200" />
+  <img alt="Lista de Todos" src="/screenshots/openweathernew.png" width="200" />
+  <img alt="Lista de Todos" src="/screenshots/studioghiblipage.png" width="200" />
+  <img alt="Lista de Todos" src="/screenshots/studioghiblidetail.png" width="200" />
+</p>
+<hr> -->
+
+
+## Observações
+
+Estou realizando esse projeto visando estudo e aplicação com layout pré-definido, para consumo de API do The MovieDB e apresentação de dados, bem como outras funcionalidades que serão incluídas no decorrer da realização do projeto, bem como listadas no link do desafio.
+Abaixo deixo também o link que contém esse e outros desafios interessantes para por em prática os estudos.
+
+Link do desafio - https://github.com/globoi/globoplay-desafio-mobile
+Link da API - https://www.themoviedb.org/documentation/api
+Link com todos os desafios - https://github.com/devlucasandrade/mobile-challenges

@@ -70,7 +70,6 @@ class _HomePageState extends State<HomePage> {
                                       id: filmesData,
                                       index: index,
                                     ),
-                                    fullscreenDialog: true,
                                   ),
                                 );
                               },
