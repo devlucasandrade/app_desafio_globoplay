@@ -1,5 +1,5 @@
-import 'package:app_desafio_globo/src/models/list_movies_model.dart';
-import 'package:app_desafio_globo/src/repository/list_movies_repository.dart';
+import 'package:app_desafio_globoplay/src/models/list_movies_model.dart';
+import 'package:app_desafio_globoplay/src/repository/list_movies_repository.dart';
 import 'package:flutter/material.dart';
 
 import 'details_page.dart';

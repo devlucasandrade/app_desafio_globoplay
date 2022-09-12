@@ -1,4 +1,4 @@
-import 'package:app_desafio_globo/src/models/movies_model.dart';
+import 'package:app_desafio_globoplay/src/models/movies_model.dart';
 import 'package:flutter/material.dart';
 
 import '../components/details_bottom.dart';

@@ -1,5 +1,5 @@
-import 'package:app_desafio_globo/src/keys/api_key.dart';
-import 'package:app_desafio_globo/src/models/list_movies_model.dart';
+import 'package:app_desafio_globoplay/src/keys/api_key.dart';
+import 'package:app_desafio_globoplay/src/models/list_movies_model.dart';
 import 'package:dio/dio.dart';
 
 // criar contador para realizar listagem

@@ -1,4 +1,4 @@
-import 'package:app_desafio_globo/src/keys/api_key.dart';
+import 'package:app_desafio_globoplay/src/keys/api_key.dart';
 import 'package:dio/dio.dart';
 
 import '../models/movies_model.dart';

@@ -1,6 +1,6 @@
-# app_desafio_globo
+# app_desafio_globoplay
 
-Projeto realizado visando estudo e aplicação para o Desafio Globoplay Mobile.
+Projeto realizado visando estudo e aplicação baseado no Desafio Globoplay Mobile.
 
 
 * [Introdução](#introdução)
@@ -11,7 +11,7 @@ Projeto realizado visando estudo e aplicação para o Desafio Globoplay Mobile.
 
 ## Introdução
 
-Projeto para aplicação de estudo sobre consumo de API´s, visando aprender sobre esse consumo, seus métodos e pacotes utilizados, bem como de sua apresentação de dados nas telas, baseado no Desafio Globoplay para mobile.
+Projeto para aplicação de estudo sobre consumo de API´s, visando aprender sobre esse consumo, seus métodos e pacotes utilizados, bem como de sua apresentação de dados nas telas, baseado no Desafio Globoplay para mobile (link nas observações).
 <hr>
 
 
