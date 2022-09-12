@@ -1,6 +1,6 @@
 # app_desafio_globoplay
 
-Projeto realizado visando estudo e aplicação baseado no Desafio Globoplay Mobile.
+Projeto em desenvolvimento visando estudo e aplicação baseado no Desafio Globoplay Mobile.
 
 
 <!-- * [Introdução](#introdução) -->
