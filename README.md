@@ -31,6 +31,6 @@ Projeto para aplicação de estudo sobre consumo de API´s, visando aprender sob
 Estou realizando esse projeto visando estudo e aplicação com layout pré-definido, para consumo de API do The MovieDB e apresentação de dados, bem como outras funcionalidades que serão incluídas no decorrer da realização do projeto, bem como listadas no link do desafio.
 Abaixo deixo também o link que contém esse e outros desafios interessantes para por em prática os estudos.
 
-Link do desafio - https://github.com/globoi/globoplay-desafio-mobile
-Link da API - https://www.themoviedb.org/documentation/api
+Link do desafio - https://github.com/globoi/globoplay-desafio-mobile<br>
+Link da API - https://www.themoviedb.org/documentation/api<br>
 Link com todos os desafios - https://github.com/devlucasandrade/mobile-challenges
