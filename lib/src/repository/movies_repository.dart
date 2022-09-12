@@ -1,18 +1,18 @@
 import 'package:app_desafio_globo/src/keys/api_key.dart';
-import 'package:app_desafio_globo/src/models/movies_model.dart';
 import 'package:dio/dio.dart';
 
-int id = 1;
+import '../models/movies_model.dart';
 
+// int movieId = 550;
 final apikey = ApiKey().apiKey;
-String url = 'https://api.themoviedb.org/4/list/$id?&api_key=$apikey&page=1';
-
+// String url = 'https://api.themoviedb.org/3/movie/$movieId?api_key=$apikey';
 final dio = Dio();
 
 class MoviesRepository {
-  Future<MoviesModel> getFilmes() async {
-    final response = await dio.get(url);
-    final list = MoviesModel.fromJson(response.data);
-    return list;
+  Future<MoviesModel> getFilme(int? movieId) async {
+    final response = await dio
+        .get('https://api.themoviedb.org/3/movie/$movieId?api_key=$apikey');
+    final movie = MoviesModel.fromJson(response.data);
+    return movie;
   }
 }

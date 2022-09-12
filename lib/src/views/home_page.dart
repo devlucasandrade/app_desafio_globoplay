@@ -1,7 +1,8 @@
-import 'package:app_desafio_globo/src/models/tmdb_model.dart';
-import 'package:app_desafio_globo/src/repository/tmdb_repository.dart';
-import 'package:app_desafio_globo/src/views/detail_page.dart';
+import 'package:app_desafio_globo/src/models/list_movies_model.dart';
+import 'package:app_desafio_globo/src/repository/list_movies_repository.dart';
 import 'package:flutter/material.dart';
+
+import 'details_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -18,8 +19,8 @@ class _HomePageState extends State<HomePage> {
         title: const Text('globloplay'),
         centerTitle: true,
       ),
-      body: FutureBuilder<TmdbModel>(
-        future: TmdbRepository().getFilmes(),
+      body: FutureBuilder<ListMoviesModel>(
+        future: ListMoviesRepository().getLista(),
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
             return const Center(
@@ -66,7 +67,7 @@ class _HomePageState extends State<HomePage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => DetailPage(
+                                    builder: (context) => DetailsPage(
                                       id: filmesData,
                                       index: index,
                                     ),

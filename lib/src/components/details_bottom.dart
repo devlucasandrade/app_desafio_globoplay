@@ -10,41 +10,42 @@ class DetailsBottom extends StatelessWidget {
     required this.index,
   }) : super(key: key);
 
-  final MoviesModel moviesModel;
   final int index;
+  final MoviesModel moviesModel;
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SizedBox(height: 10),
-          const Text(
-            'Ficha Técnica',
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
+      child: Container(
+        height: MediaQuery.of(context).size.height * .3,
+        padding: const EdgeInsets.only(left: 20, top: 20),
+        color: Colors.black,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(height: 10),
+            const Text(
+              'Ficha Técnica',
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-          ),
-          const SizedBox(height: 20),
-          DetailsBottomRow(
-            texto: 'Título Original: ',
-            textoModel: '${moviesModel.results![index].originalTitle}',
-          ),
-          DetailsBottomRow(
-            texto: 'Gênero: ',
-            textoModel: '${moviesModel.results![index].genreIds}',
-          ),
-          DetailsBottomRow(
-            texto: 'Tempo: ',
-            textoModel: '${moviesModel.runtime} min',
-          ),
-          DetailsBottomRow(
-            texto: 'Ano de lançamento: ',
-            textoModel: '${moviesModel.results![index].releaseDate?.year}',
-          ),
-        ],
+            const SizedBox(height: 20),
+            DetailsBottomRow(
+              texto: 'Título Original: ',
+              textoModel: '${moviesModel.originalTitle}',
+            ),
+            // DetailsBottomRow(
+            //   texto: 'Título Original: ',
+            //   textoModel: '${moviesModel.results![index].originalTitle}',
+            // ),
+            // DetailsBottomRow(
+            //   texto: 'Ano de lançamento: ',
+            //   textoModel: '${moviesModel.results![index].releaseDate?.year}',
+            // ),
+          ],
+        ),
       ),
     );
   }
