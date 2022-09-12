@@ -3,9 +3,9 @@
 Projeto realizado visando estudo e aplicação baseado no Desafio Globoplay Mobile.
 
 
-* [Introdução](#introdução)
+<!-- * [Introdução](#introdução) -->
 <!-- * [Screenshots](#screenshots) -->
-* [Observações](#observações)
+<!-- * [Observações](#observações) -->
 <!-- * [Executando](#executando) -->
 <!-- * [Contribua](#contribua) -->
 
