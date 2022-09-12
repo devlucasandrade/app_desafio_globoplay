@@ -1,6 +1,7 @@
 import 'package:app_desafio_globo/src/models/movies_model.dart';
 import 'package:flutter/material.dart';
 
+import '../components/details_bottom.dart';
 import '../models/list_movies_model.dart';
 import '../repository/movies_repository.dart';
 
@@ -121,30 +122,9 @@ class DetailsPage extends StatelessWidget {
               ),
             ),
             bottomNavigationBar: BottomAppBar(
-              child: Container(
-                height: MediaQuery.of(context).size.height * .4,
-                padding: const EdgeInsets.only(left: 20, top: 20),
-                color: Colors.black,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const SizedBox(height: 10),
-                    const Text(
-                      'Ficha Técnica',
-                      style: TextStyle(
-                        color: Colors.grey,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    const SizedBox(height: 20),
-                    Text(
-                      'Título Original: ${filmeData.originalTitle}',
-                      style: const TextStyle(
-                        color: Colors.grey,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    )
-                  ],
+              child: SingleChildScrollView(
+                child: DetailsBottom(
+                  filmeData: filmeData,
                 ),
               ),
             ),

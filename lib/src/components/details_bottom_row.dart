@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 
+import '../models/movies_model.dart';
+
 class DetailsBottomRow extends StatelessWidget {
   const DetailsBottomRow({
     Key? key,
+    required this.filmeData,
     required this.texto,
-    required this.textoModel,
+    required this.textoFilmData,
   }) : super(key: key);
 
+  final MoviesModel? filmeData;
   final String texto;
-  final String textoModel;
+  final String textoFilmData;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +28,7 @@ class DetailsBottomRow extends StatelessWidget {
               ),
             ),
             Text(
-              textoModel,
+              textoFilmData,
               style: const TextStyle(
                 color: Colors.grey,
               ),

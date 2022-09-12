@@ -10,8 +10,8 @@ final dio = Dio();
 
 class MoviesRepository {
   Future<MoviesModel> getFilme(int? movieId) async {
-    final response = await dio
-        .get('https://api.themoviedb.org/3/movie/$movieId?api_key=$apikey');
+    final response = await dio.get(
+        'https://api.themoviedb.org/3/movie/$movieId?api_key=$apikey&language=pt-BR');
     final movie = MoviesModel.fromJson(response.data);
     return movie;
   }

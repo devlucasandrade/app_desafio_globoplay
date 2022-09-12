@@ -6,20 +6,18 @@ import 'details_bottom_row.dart';
 class DetailsBottom extends StatelessWidget {
   const DetailsBottom({
     Key? key,
-    required this.moviesModel,
-    required this.index,
+    required this.filmeData,
   }) : super(key: key);
 
-  final int index;
-  final MoviesModel moviesModel;
+  final MoviesModel? filmeData;
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Container(
-        height: MediaQuery.of(context).size.height * .3,
-        padding: const EdgeInsets.only(left: 20, top: 20),
-        color: Colors.black,
+    return Container(
+      height: MediaQuery.of(context).size.height * .30,
+      padding: const EdgeInsets.only(left: 20, top: 10),
+      color: Colors.black,
+      child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -27,26 +25,54 @@ class DetailsBottom extends StatelessWidget {
             const Text(
               'Ficha Técnica',
               style: TextStyle(
-                color: Colors.white,
+                color: Colors.grey,
                 fontWeight: FontWeight.bold,
               ),
             ),
             const SizedBox(height: 20),
-            DetailsBottomRow(
-              texto: 'Título Original: ',
-              textoModel: '${moviesModel.originalTitle}',
+            Text(
+              'Título Original: ${filmeData!.originalTitle}',
+              style: const TextStyle(
+                color: Colors.grey,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-            // DetailsBottomRow(
-            //   texto: 'Título Original: ',
-            //   textoModel: '${moviesModel.results![index].originalTitle}',
-            // ),
-            // DetailsBottomRow(
-            //   texto: 'Ano de lançamento: ',
-            //   textoModel: '${moviesModel.results![index].releaseDate?.year}',
-            // ),
+            const SizedBox(height: 5),
+            DetailsBottomRow(
+              filmeData: filmeData,
+              texto: 'Ano de Lançamento: ',
+              textoFilmData: '${filmeData!.releaseDate!.year}',
+            ),
+            DetailsBottomRow(
+              filmeData: filmeData,
+              texto: 'Duração: ',
+              textoFilmData: '${filmeData!.runtime} min',
+            ),
+            DetailsBottomRow(
+              filmeData: filmeData,
+              texto: 'Língua Original: ',
+              textoFilmData: '${filmeData!.originalLanguage}'.toUpperCase(),
+            ),
+            DetailsBottomRow(
+              filmeData: filmeData,
+              texto: 'Gênero: ',
+              textoFilmData: '${filmeData?.genres?[0].name}',
+            ),
+            Text(
+              'Visão Geral: ${filmeData!.overview}',
+              style: const TextStyle(
+                color: Colors.grey,
+              ),
+            ),
           ],
         ),
       ),
     );
+  }
+}
+
+extension StringExtension on String {
+  String capitalize() {
+    return "${this[0].toUpperCase()}${substring(1)}";
   }
 }

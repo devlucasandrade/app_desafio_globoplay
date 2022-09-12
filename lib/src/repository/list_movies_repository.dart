@@ -6,7 +6,8 @@ import 'package:dio/dio.dart';
 int id = 1;
 
 final apikey = ApiKey().apiKey;
-String url = 'https://api.themoviedb.org/4/list/$id?&api_key=$apikey&page=1';
+String url =
+    'https://api.themoviedb.org/4/list/$id?&api_key=$apikey&page=1&language=pt-BR';
 final dio = Dio();
 
 class ListMoviesRepository {
