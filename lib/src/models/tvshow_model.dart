@@ -1,14 +1,14 @@
 import 'dart:convert';
 
-import 'movies_results_model.dart';
+import 'tvshow_results_model.dart';
 
-MoviesModel popularModelFromJson(String str) =>
-    MoviesModel.fromJson(json.decode(str));
+TvShowModel tvShowModelFromJson(String str) =>
+    TvShowModel.fromJson(json.decode(str));
 
-String popularModelToJson(MoviesModel data) => json.encode(data.toJson());
+String tvShowModelToJson(TvShowModel data) => json.encode(data.toJson());
 
-class MoviesModel {
-  MoviesModel({
+class TvShowModel {
+  TvShowModel({
     this.page,
     this.results,
     this.totalPages,
@@ -16,14 +16,14 @@ class MoviesModel {
   });
 
   int? page;
-  List<MoviesResult>? results;
+  List<TvShowResults>? results;
   int? totalPages;
   int? totalResults;
 
-  factory MoviesModel.fromJson(Map<String, dynamic> json) => MoviesModel(
+  factory TvShowModel.fromJson(Map<String, dynamic> json) => TvShowModel(
         page: json["page"],
-        results: List<MoviesResult>.from(
-            json["results"].map((x) => MoviesResult.fromJson(x))),
+        // results: List<TvShowResults>.from(
+        //     json["results"].map((x) => TvShowResults.fromJson(x))),
         totalPages: json["total_pages"],
         totalResults: json["total_results"],
       );

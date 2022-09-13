@@ -1,6 +1,5 @@
-class Result {
-  Result({
-    this.adult,
+class MoviesResult {
+  MoviesResult({
     this.backdropPath,
     this.genreIds,
     this.id,
@@ -17,7 +16,6 @@ class Result {
     this.voteCount,
   });
 
-  bool? adult;
   String? backdropPath;
   List<int>? genreIds;
   int? id;
@@ -33,8 +31,7 @@ class Result {
   double? voteAverage;
   int? voteCount;
 
-  factory Result.fromJson(Map<String, dynamic> json) => Result(
-        adult: json["adult"],
+  factory MoviesResult.fromJson(Map<String, dynamic> json) => MoviesResult(
         backdropPath: json["backdrop_path"],
         genreIds: List<int>.from(json["genre_ids"].map((x) => x)),
         id: json["id"],
@@ -51,7 +48,6 @@ class Result {
       );
 
   Map<String, dynamic> toJson() => {
-        "adult": adult,
         "backdrop_path": backdropPath,
         "genre_ids": List<dynamic>.from(genreIds!.map((x) => x)),
         "id": id,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../models/movies_model.dart';
+import '../models/movies_details_model.dart';
 
 class DetailsBottomRow extends StatelessWidget {
   const DetailsBottomRow({
@@ -10,7 +10,7 @@ class DetailsBottomRow extends StatelessWidget {
     required this.textoFilmData,
   }) : super(key: key);
 
-  final MoviesModel? filmeData;
+  final DetailsMoviesModel? filmeData;
   final String texto;
   final String textoFilmData;
 

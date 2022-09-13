@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../models/movies_model.dart';
+import '../models/movies_details_model.dart';
 import 'details_bottom_row.dart';
 
 class DetailsBottom extends StatelessWidget {
@@ -9,14 +9,14 @@ class DetailsBottom extends StatelessWidget {
     required this.filmeData,
   }) : super(key: key);
 
-  final MoviesModel? filmeData;
+  final DetailsMoviesModel? filmeData;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height * .30,
+      height: MediaQuery.of(context).size.height * .4,
       padding: const EdgeInsets.only(left: 20, top: 10),
-      color: Colors.black,
+      color: Colors.white.withOpacity(0.1),
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
