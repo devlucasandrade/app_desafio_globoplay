@@ -3,9 +3,9 @@
 Projeto em desenvolvimento visando estudo e aplicação baseado no Desafio Globoplay Mobile.
 
 
-<!-- * [Introdução](#introdução) -->
-<!-- * [Screenshots](#screenshots) -->
-<!-- * [Observações](#observações) -->
+* [Introdução](#introdução)
+* [Screenshots](#screenshots)
+* [Observações](#observações)
 <!-- * [Executando](#executando) -->
 <!-- * [Contribua](#contribua) -->
 
@@ -15,15 +15,15 @@ Projeto para aplicação de estudo sobre consumo de API´s, visando aprender sob
 <hr>
 
 
-<!-- ## Screenshots
+## Screenshots
 <p float="left">
-  <img alt="Home Page" src="/screenshots/app_consumo_api.png" width="200" />
-  <img alt="Lista de Todos" src="/screenshots/jsonplaceholdernew.png" width="200" />
-  <img alt="Lista de Todos" src="/screenshots/openweathernew.png" width="200" />
+  <img alt="Home Page" src="/screenshots/home_page.png" width="200" />
+  <img alt="Detalhes do Filme" src="/screenshots/detalhes_do_filme.png" width="200" />
+  <!-- <img alt="Lista de Todos" src="/screenshots/openweathernew.png" width="200" />
   <img alt="Lista de Todos" src="/screenshots/studioghiblipage.png" width="200" />
-  <img alt="Lista de Todos" src="/screenshots/studioghiblidetail.png" width="200" />
+  <img alt="Lista de Todos" src="/screenshots/studioghiblidetail.png" width="200" /> -->
 </p>
-<hr> -->
+<hr>
 
 
 ## Observações
