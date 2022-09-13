@@ -54,6 +54,7 @@ class MoviesDetailsBottom extends StatelessWidget {
                 style: const TextStyle(
                   color: Colors.grey,
                 ),
+                textAlign: TextAlign.justify,
               ),
             ],
           ),

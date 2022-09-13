@@ -13,53 +13,61 @@ class TVShowDetailsBottom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height * .4,
-      padding: const EdgeInsets.only(left: 20, top: 10),
-      color: Colors.white.withOpacity(0.1),
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(height: 10),
-            const Text(
-              'Ficha Técnica',
-              style: TextStyle(
-                color: Colors.grey,
-                fontWeight: FontWeight.bold,
+    return Expanded(
+      child: Container(
+        padding: const EdgeInsets.only(left: 20, top: 20, right: 10),
+        color: Colors.white.withOpacity(0.1),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Título Original: ${data!.name}',
+                style: const TextStyle(
+                  color: Colors.grey,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            const SizedBox(height: 20),
-            Text(
-              'Título Original: ${data!.name}',
-              style: const TextStyle(
-                color: Colors.grey,
-                fontWeight: FontWeight.bold,
+              const SizedBox(height: 5),
+              TVShowDetailsBottomRow(
+                detailsData: data,
+                texto: 'Temporadas: ',
+                data: '${data!.numberOfSeasons}',
               ),
-            ),
-            const SizedBox(height: 5),
-            TVShowDetailsBottomRow(
-              detailsData: data,
-              texto: 'Temporadas: ',
-              data: '${data!.numberOfSeasons}',
-            ),
-            TVShowDetailsBottomRow(
-              detailsData: data,
-              texto: 'Episódios: ',
-              data: '${data!.numberOfEpisodes} min',
-            ),
-            TVShowDetailsBottomRow(
-              detailsData: data,
-              texto: 'Língua Original: ',
-              data: '${data!.originalLanguage}'.toUpperCase(),
-            ),
-            Text(
-              'Visão Geral: ${data!.overview}',
-              style: const TextStyle(
-                color: Colors.grey,
+              TVShowDetailsBottomRow(
+                detailsData: data,
+                texto: 'Episódios: ',
+                data: '${data!.numberOfEpisodes}',
               ),
-            ),
-          ],
+              TVShowDetailsBottomRow(
+                detailsData: data,
+                texto: 'Criado por: ',
+                data: '${data!.createdBy![0].name}',
+              ),
+              TVShowDetailsBottomRow(
+                detailsData: data,
+                texto: 'Ano de Lançamento: ',
+                data: '${data!.firstAirDate?.year}',
+              ),
+              TVShowDetailsBottomRow(
+                detailsData: data,
+                texto: 'Gênero: ',
+                data: '${data!.genres![0].name}',
+              ),
+              TVShowDetailsBottomRow(
+                detailsData: data,
+                texto: 'Plataforma: ',
+                data: '${data!.networks?[0].name}',
+              ),
+              Text(
+                'Visão Geral: ${data!.overview}',
+                style: const TextStyle(
+                  color: Colors.grey,
+                ),
+                textAlign: TextAlign.justify,
+              ),
+            ],
+          ),
         ),
       ),
     );

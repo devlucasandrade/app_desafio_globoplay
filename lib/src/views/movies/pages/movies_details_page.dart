@@ -58,8 +58,7 @@ class MoviesDetailsPage extends StatelessWidget {
                         padding: const EdgeInsets.all(1),
                         width: 140,
                         child: Image.network(
-                          'https://image.tmdb.org/t/p/w200/${filmeData?.posterPath}',
-                        ),
+                            'https://image.tmdb.org/t/p/w200/${filmeData?.posterPath}'),
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 20),
@@ -78,7 +77,7 @@ class MoviesDetailsPage extends StatelessWidget {
                           Expanded(
                             child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
-                                primary: Colors.white,
+                                backgroundColor: Colors.white,
                               ),
                               onPressed: () {},
                               child: Padding(
@@ -108,9 +107,9 @@ class MoviesDetailsPage extends StatelessWidget {
                           Expanded(
                             child: OutlinedButton(
                               style: OutlinedButton.styleFrom(
-                                primary: Colors.black,
+                                foregroundColor: Colors.black,
                                 side: const BorderSide(
-                                  width: 0.5,
+                                  width: 1,
                                   color: Colors.white,
                                 ),
                               ),

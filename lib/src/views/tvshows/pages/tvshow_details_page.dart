@@ -2,6 +2,7 @@ import 'package:app_desafio_globoplay/src/repository/tvshow_repository.dart';
 import 'package:flutter/material.dart';
 
 import '../../../models/tvshow/tvshow_details_model.dart';
+import '../widgets/tvshow_details_bottom.dart';
 
 class TVShowDetailsPage extends StatelessWidget {
   const TVShowDetailsPage({
@@ -61,7 +62,7 @@ class TVShowDetailsPage extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 20),
+                        padding: const EdgeInsets.only(top: 20, bottom: 5),
                         child: Text(
                           data!.name.toString(),
                           style: const TextStyle(
@@ -72,12 +73,23 @@ class TVShowDetailsPage extends StatelessWidget {
                           textAlign: TextAlign.center,
                         ),
                       ),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 10),
+                        child: Text(
+                          '${data.tagline}',
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
                       Row(
                         children: [
                           Expanded(
                             child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
-                                primary: Colors.white,
+                                backgroundColor: Colors.white,
                               ),
                               onPressed: () {},
                               child: Padding(
@@ -107,9 +119,9 @@ class TVShowDetailsPage extends StatelessWidget {
                           Expanded(
                             child: OutlinedButton(
                               style: OutlinedButton.styleFrom(
-                                primary: Colors.black,
+                                foregroundColor: Colors.black,
                                 side: const BorderSide(
-                                  width: 0.5,
+                                  width: 1,
                                   color: Colors.white,
                                 ),
                               ),
@@ -140,7 +152,7 @@ class TVShowDetailsPage extends StatelessWidget {
                         ],
                       ),
                       const SizedBox(height: 20),
-                      // DetailsBottom(filmeData: filmeData),
+                      TVShowDetailsBottom(data: data),
                     ],
                   ),
                 ),
