@@ -1,6 +1,6 @@
 # app_desafio_globoplay
 
-Projeto em desenvolvimento visando estudo e aplicação baseado no Desafio Globoplay Mobile.
+Projeto em desenvolvimento, visando estudo e aplicação de conhecimentos, baseado no Desafio Globoplay Mobile.
 
 
 * [Introdução](#introdução)
@@ -20,6 +20,7 @@ Projeto para aplicação de estudo sobre consumo de API´s, visando aprender sob
   <img alt="Home Page" src="/screenshots/home_page.png" width="200" />
   <img alt="Detalhes do Filme" src="/screenshots/detalhes_do_filme.png" width="200" />
   <img alt="Detalhes do Série" src="/screenshots/detalhes_da_serie.png" width="200" />
+  <img alt="Gif" src="/screenshots/app_desafio_globoplay.gif" width="200" />
 </p>
 <hr>
 
