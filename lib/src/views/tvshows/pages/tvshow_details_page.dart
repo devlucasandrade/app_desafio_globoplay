@@ -1,32 +1,31 @@
+import 'package:app_desafio_globoplay/src/repository/tvshow_repository.dart';
 import 'package:flutter/material.dart';
 
-import '../components/details_bottom.dart';
-import '../models/movies_details_model.dart';
-import '../repository/movies_repository.dart';
+import '../../../models/tvshow/tvshow_details_model.dart';
 
-class DetailsPage extends StatelessWidget {
-  const DetailsPage({
+class TVShowDetailsPage extends StatelessWidget {
+  const TVShowDetailsPage({
     Key? key,
-    required this.id,
+    required this.tvId,
   }) : super(key: key);
-  final int? id;
+  final int? tvId;
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<DetailsMoviesModel>(
-      future: MoviesRepository().fetchDetails(id),
+    return FutureBuilder<TvShowDetailsModel>(
+      future: TVShowRepository().fetchTVShowsDetails(tvId),
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
           return const Center(
             child: CircularProgressIndicator(),
           );
         } else {
-          final filmeData = snapshot.data;
+          final data = snapshot.data;
           return Container(
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: NetworkImage(
-                  'https://image.tmdb.org/t/p/w400/${filmeData?.posterPath}',
+                  'https://image.tmdb.org/t/p/w400/${data?.posterPath}',
                 ),
                 fit: BoxFit.cover,
               ),
@@ -53,16 +52,18 @@ class DetailsPage extends StatelessWidget {
                   width: double.infinity,
                   child: Column(
                     children: [
-                      SizedBox(
-                        width: 120,
+                      Container(
+                        color: Colors.grey,
+                        padding: const EdgeInsets.all(1),
+                        width: 140,
                         child: Image.network(
-                          'https://image.tmdb.org/t/p/w200/${filmeData?.posterPath}',
+                          'https://image.tmdb.org/t/p/w200/${data?.posterPath}',
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 20),
                         child: Text(
-                          filmeData!.title.toString(),
+                          data!.name.toString(),
                           style: const TextStyle(
                             color: Colors.white,
                             fontSize: 24,
@@ -139,7 +140,7 @@ class DetailsPage extends StatelessWidget {
                         ],
                       ),
                       const SizedBox(height: 20),
-                      DetailsBottom(filmeData: filmeData),
+                      // DetailsBottom(filmeData: filmeData),
                     ],
                   ),
                 ),

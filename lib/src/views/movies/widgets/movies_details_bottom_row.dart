@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../models/movies_details_model.dart';
+import '../../../models/movies/movies_details_model.dart';
 
-class DetailsBottomRow extends StatelessWidget {
-  const DetailsBottomRow({
+class MoviesDetailsBottomRow extends StatelessWidget {
+  const MoviesDetailsBottomRow({
     Key? key,
     required this.filmeData,
     required this.texto,

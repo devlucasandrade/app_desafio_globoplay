@@ -8,4 +8,9 @@ void main() {
     final tvshow = await repository.fetchTVShows();
     print(tvshow);
   });
+
+  test('deve trazer o nome da primeira serie', () async {
+    final tvshowdetails = await repository.fetchTVShowsDetails(tvId);
+    print(tvshowdetails.originalName);
+  });
 }

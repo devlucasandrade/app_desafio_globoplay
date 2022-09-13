@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'genre_model.dart';
+import '../genre_model.dart';
 
 DetailsMoviesModel moviesModelFromJson(String str) =>
     DetailsMoviesModel.fromJson(json.decode(str));

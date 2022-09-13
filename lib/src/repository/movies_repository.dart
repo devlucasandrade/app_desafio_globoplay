@@ -1,8 +1,8 @@
 import 'package:app_desafio_globoplay/src/keys/api_key.dart';
 import 'package:app_desafio_globoplay/src/service/api_service.dart';
 
-import '../models/movies_details_model.dart';
-import '../models/movies_model.dart';
+import '../models/movies/movies_details_model.dart';
+import '../models/movies/movies_model.dart';
 
 int movieId = 550;
 final apikey = ApiKey().apiKey;

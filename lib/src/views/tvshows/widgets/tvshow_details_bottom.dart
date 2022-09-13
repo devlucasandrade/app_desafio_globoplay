@@ -1,15 +1,15 @@
+import 'package:app_desafio_globoplay/src/models/tvshow/tvshow_details_model.dart';
 import 'package:flutter/material.dart';
 
-import '../models/movies_details_model.dart';
-import 'details_bottom_row.dart';
+import 'tvshow_details_bottom_row.dart';
 
-class DetailsBottom extends StatelessWidget {
-  const DetailsBottom({
+class TVShowDetailsBottom extends StatelessWidget {
+  const TVShowDetailsBottom({
     Key? key,
-    required this.filmeData,
+    required this.data,
   }) : super(key: key);
 
-  final DetailsMoviesModel? filmeData;
+  final TvShowDetailsModel? data;
 
   @override
   Widget build(BuildContext context) {
@@ -31,35 +31,30 @@ class DetailsBottom extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             Text(
-              'Título Original: ${filmeData!.originalTitle}',
+              'Título Original: ${data!.name}',
               style: const TextStyle(
                 color: Colors.grey,
                 fontWeight: FontWeight.bold,
               ),
             ),
             const SizedBox(height: 5),
-            DetailsBottomRow(
-              filmeData: filmeData,
-              texto: 'Ano de Lançamento: ',
-              textoFilmData: '${filmeData!.releaseDate!.year}',
+            TVShowDetailsBottomRow(
+              detailsData: data,
+              texto: 'Temporadas: ',
+              data: '${data!.numberOfSeasons}',
             ),
-            DetailsBottomRow(
-              filmeData: filmeData,
-              texto: 'Duração: ',
-              textoFilmData: '${filmeData!.runtime} min',
+            TVShowDetailsBottomRow(
+              detailsData: data,
+              texto: 'Episódios: ',
+              data: '${data!.numberOfEpisodes} min',
             ),
-            DetailsBottomRow(
-              filmeData: filmeData,
+            TVShowDetailsBottomRow(
+              detailsData: data,
               texto: 'Língua Original: ',
-              textoFilmData: '${filmeData!.originalLanguage}'.toUpperCase(),
-            ),
-            DetailsBottomRow(
-              filmeData: filmeData,
-              texto: 'Gênero: ',
-              textoFilmData: '${filmeData?.genres?[0].name}',
+              data: '${data!.originalLanguage}'.toUpperCase(),
             ),
             Text(
-              'Visão Geral: ${filmeData!.overview}',
+              'Visão Geral: ${data!.overview}',
               style: const TextStyle(
                 color: Colors.grey,
               ),

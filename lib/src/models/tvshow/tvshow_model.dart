@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'tvshow_results_model.dart';
+import 'tvshow_details_model.dart';
 
 TvShowModel tvShowModelFromJson(String str) =>
     TvShowModel.fromJson(json.decode(str));
@@ -16,14 +16,14 @@ class TvShowModel {
   });
 
   int? page;
-  List<TvShowResults>? results;
+  List<TvShowDetailsModel>? results;
   int? totalPages;
   int? totalResults;
 
   factory TvShowModel.fromJson(Map<String, dynamic> json) => TvShowModel(
         page: json["page"],
-        // results: List<TvShowResults>.from(
-        //     json["results"].map((x) => TvShowResults.fromJson(x))),
+        results: List<TvShowDetailsModel>.from(
+            json["results"].map((x) => TvShowDetailsModel.fromJson(x))),
         totalPages: json["total_pages"],
         totalResults: json["total_results"],
       );
