@@ -1,5 +1,5 @@
 import '../genre_model.dart';
-import 'tvsshow_createdby_model.dart';
+import 'createdby_model.dart';
 
 class TvShowDetailsModel {
   TvShowDetailsModel({

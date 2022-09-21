@@ -2,7 +2,7 @@ import 'package:app_desafio_globoplay/src/repository/tvshow_repository.dart';
 import 'package:flutter/material.dart';
 
 import '../../../models/tvshow/tvshow_model.dart';
-import '../pages/tvshow_details_page.dart';
+import '../pages/details_page.dart';
 
 class TVShowFutureBuilder extends StatelessWidget {
   const TVShowFutureBuilder({

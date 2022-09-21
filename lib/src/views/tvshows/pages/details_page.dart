@@ -1,8 +1,8 @@
 import 'package:app_desafio_globoplay/src/repository/tvshow_repository.dart';
 import 'package:flutter/material.dart';
 
-import '../../../models/tvshow/tvshow_details_model.dart';
-import '../widgets/tvshow_details_bottom.dart';
+import '../../../models/tvshow/details_model.dart';
+import '../widgets/details_bottom.dart';
 
 class TVShowDetailsPage extends StatelessWidget {
   const TVShowDetailsPage({
@@ -26,7 +26,7 @@ class TVShowDetailsPage extends StatelessWidget {
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: NetworkImage(
-                  'https://image.tmdb.org/t/p/w400/${data?.posterPath}',
+                  'https://image.tmdb.org/t/p/w400${data?.posterPath}',
                 ),
                 fit: BoxFit.cover,
               ),
@@ -58,7 +58,7 @@ class TVShowDetailsPage extends StatelessWidget {
                         padding: const EdgeInsets.all(1),
                         width: 140,
                         child: Image.network(
-                          'https://image.tmdb.org/t/p/w200/${data?.posterPath}',
+                          'https://image.tmdb.org/t/p/w200${data?.posterPath}',
                         ),
                       ),
                       Padding(

@@ -1,18 +1,17 @@
+import 'package:app_desafio_globoplay/src/models/tvshow/details_model.dart';
 import 'package:flutter/material.dart';
 
-import '../../../models/movies/movies_details_model.dart';
-
-class MoviesDetailsBottomRow extends StatelessWidget {
-  const MoviesDetailsBottomRow({
+class TVShowDetailsBottomRow extends StatelessWidget {
+  const TVShowDetailsBottomRow({
     Key? key,
-    required this.filmeData,
+    required this.detailsData,
     required this.texto,
-    required this.textoFilmData,
+    required this.data,
   }) : super(key: key);
 
-  final DetailsMoviesModel? filmeData;
+  final TvShowDetailsModel? detailsData;
   final String texto;
-  final String textoFilmData;
+  final String data;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +27,7 @@ class MoviesDetailsBottomRow extends StatelessWidget {
               ),
             ),
             Text(
-              textoFilmData,
+              data,
               style: const TextStyle(
                 color: Colors.grey,
               ),

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../../../models/movies/movies_model.dart';
 import '../../../repository/movies_repository.dart';
-import '../pages/movies_details_page.dart';
+import '../pages/details_page.dart';
 
-class MoviesHomeFutureBuilder extends StatelessWidget {
-  const MoviesHomeFutureBuilder({
+class MoviesFutureBuilder extends StatelessWidget {
+  const MoviesFutureBuilder({
     Key? key,
   }) : super(key: key);
 

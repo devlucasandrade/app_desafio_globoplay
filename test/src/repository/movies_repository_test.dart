@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   final repository = MoviesRepository();
+  int movieId = 550;
 
   test('deve trazer instancia do model', () async {
     final list = await repository.fetchMovies();

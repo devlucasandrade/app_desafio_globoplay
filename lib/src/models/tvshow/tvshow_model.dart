@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'tvshow_details_model.dart';
+import 'details_model.dart';
 
 TvShowModel tvShowModelFromJson(String str) =>
     TvShowModel.fromJson(json.decode(str));

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../models/movies/movies_details_model.dart';
-import 'movies_details_bottom_row.dart';
+import '../../../models/movies/details_model.dart';
+import 'details_bottomrow.dart';
 
 class MoviesDetailsBottom extends StatelessWidget {
   const MoviesDetailsBottom({

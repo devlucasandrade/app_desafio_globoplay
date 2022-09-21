@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'movies_results_model.dart';
+import 'results_model.dart';
 
 MoviesModel popularModelFromJson(String str) =>
     MoviesModel.fromJson(json.decode(str));

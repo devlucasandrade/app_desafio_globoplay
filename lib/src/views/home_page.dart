@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'movies/widgets/movies_futurebuilder.dart';
-import 'tvshows/widgets/tvshow_futurebuilder.dart';
+import 'movies/widgets/futurebuilder.dart';
+import 'tvshows/widgets/futurebuilder.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -19,7 +19,8 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Column(
         children: const [
-          MoviesHomeFutureBuilder(),
+          MoviesFutureBuilder(),
+          SizedBox(height: 20),
           TVShowFutureBuilder(),
         ],
       ),
