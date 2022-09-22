@@ -1,5 +1,7 @@
 import 'package:app_desafio_globoplay/src/repository/tvshow_repository.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 
 import '../../../models/tvshow/tvshow_model.dart';
 import '../../tvshows/pages/tvshows_details_page.dart';
@@ -11,12 +13,22 @@ class TVShowFutureBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final customCacheManager = CacheManager(
+      Config(
+        'customCachedKey',
+        stalePeriod: const Duration(days: 5),
+      ),
+    );
+
     return FutureBuilder<TvShowModel>(
       future: TVShowRepository().fetchTVShows(),
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
-          return const Center(
-            child: CircularProgressIndicator(),
+          return Container(
+            height: 200,
+            child: const Center(
+              child: CircularProgressIndicator(),
+            ),
           );
         } else {
           final data = snapshot.data;
@@ -53,8 +65,25 @@ class TVShowFutureBuilder extends StatelessWidget {
                         },
                         child: Container(
                           margin: const EdgeInsets.only(right: 10),
-                          child: Image.network(
-                            'https://image.tmdb.org/t/p/w400/${data.results![index].posterPath}',
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: CachedNetworkImage(
+                              cacheManager: customCacheManager,
+                              key: UniqueKey(),
+                              imageUrl:
+                                  'https://image.tmdb.org/t/p/w400/${data.results![index].posterPath}',
+                              fit: BoxFit.cover,
+                              placeholder: (context, url) =>
+                                  Container(color: Colors.black12),
+                              errorWidget: (context, url, error) => Container(
+                                color: Colors.black12,
+                                child: const Icon(
+                                  Icons.error,
+                                  color: Colors.red,
+                                  size: 80,
+                                ),
+                              ),
+                            ),
                           ),
                         ),
                       );

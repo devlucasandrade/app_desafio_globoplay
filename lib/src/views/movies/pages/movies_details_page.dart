@@ -1,5 +1,7 @@
 import 'package:app_desafio_globoplay/src/views/movies/widgets/movies_trending_futurebuilder.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 
 import '../../../models/movies/details_model.dart';
 import '../../../repository/movies_repository.dart';
@@ -22,6 +24,12 @@ class _MoviesDetailsPageState extends State<MoviesDetailsPage>
   @override
   Widget build(BuildContext context) {
     TabController tabController = TabController(length: 2, vsync: this);
+    final customCacheManager = CacheManager(
+      Config(
+        'customCachedKey',
+        stalePeriod: const Duration(days: 5),
+      ),
+    );
 
     return FutureBuilder<DetailsMoviesModel>(
       future: MoviesRepository().fetchDetails(widget.id),
@@ -63,12 +71,33 @@ class _MoviesDetailsPageState extends State<MoviesDetailsPage>
                   width: double.infinity,
                   child: Column(
                     children: [
-                      Container(
-                        color: Colors.grey,
-                        padding: const EdgeInsets.all(1),
-                        width: 120,
-                        child: Image.network(
-                          'https://image.tmdb.org/t/p/w200${filmeData?.posterPath}',
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(10),
+                        child: Container(
+                          color: Colors.grey,
+                          padding: const EdgeInsets.all(1),
+                          width: 120,
+                          height: 180,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: CachedNetworkImage(
+                              cacheManager: customCacheManager,
+                              key: UniqueKey(),
+                              imageUrl:
+                                  'https://image.tmdb.org/t/p/w200${filmeData?.posterPath}',
+                              fit: BoxFit.cover,
+                              placeholder: (context, url) =>
+                                  Container(color: Colors.black12),
+                              errorWidget: (context, url, error) => Container(
+                                color: Colors.black12,
+                                child: const Icon(
+                                  Icons.error,
+                                  color: Colors.red,
+                                  size: 80,
+                                ),
+                              ),
+                            ),
+                          ),
                         ),
                       ),
                       Padding(
