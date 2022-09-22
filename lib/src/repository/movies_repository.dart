@@ -31,4 +31,15 @@ class MoviesRepository {
       throw Exception('Falha ao buscar detalhes dos filmes');
     }
   }
+
+  Future<MoviesModel> fetchTrending() async {
+    try {
+      final response =
+          await dio.get('/trending/movie/day?api_key=$apikey&language=pt-BR');
+      return MoviesModel.fromJson(response.data);
+    } on DioError catch (e) {
+      debugPrint('Status code: ${e.response?.statusCode.toString()}');
+      throw Exception('Falha ao buscar detalhes');
+    }
+  }
 }

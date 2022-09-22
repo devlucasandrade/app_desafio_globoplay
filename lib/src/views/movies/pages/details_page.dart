@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../../../models/movies/details_model.dart';
 import '../../../repository/movies_repository.dart';
-import '../widgets/details_bottom.dart';
-import '../widgets/details_button.dart';
+import '../widgets/info_container.dart';
+import '../widgets/details_buttons.dart';
+import '../widgets/tabview_details.dart';
 
 class MoviesDetailsPage extends StatelessWidget {
   const MoviesDetailsPage({
@@ -74,9 +75,10 @@ class MoviesDetailsPage extends StatelessWidget {
                           textAlign: TextAlign.center,
                         ),
                       ),
-                      const DetailsButtons(),
+                      const MoviesButtons(),
                       const SizedBox(height: 20),
-                      MoviesDetailsBottom(filmeData: filmeData),
+                      MoviesInfoContainer(filmeData: filmeData),
+                      // const TabviewDetails()
                     ],
                   ),
                 ),

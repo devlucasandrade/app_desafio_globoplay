@@ -1,18 +1,18 @@
-import 'package:app_desafio_globoplay/src/repository/tvshow_repository.dart';
 import 'package:flutter/material.dart';
 
-import '../../../models/tvshow/tvshow_model.dart';
-import '../pages/details_page.dart';
+import '../../../models/movies/movies_model.dart';
+import '../../../repository/movies_repository.dart';
+import '../../movies/pages/details_page.dart';
 
-class TVShowFutureBuilder extends StatelessWidget {
-  const TVShowFutureBuilder({
+class MoviesFutureBuilder extends StatelessWidget {
+  const MoviesFutureBuilder({
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<TvShowModel>(
-      future: TVShowRepository().fetchTVShows(),
+    return FutureBuilder<MoviesModel>(
+      future: MoviesRepository().fetchMovies(),
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
           return const Center(
@@ -26,7 +26,7 @@ class TVShowFutureBuilder extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
-                  'Séries Populares',
+                  'Filmes Populares',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 26,
@@ -38,15 +38,15 @@ class TVShowFutureBuilder extends StatelessWidget {
                   height: 220,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: data!.results!.length,
+                    itemCount: data?.results?.length,
                     itemBuilder: (context, index) {
                       return GestureDetector(
                         onTap: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => TVShowDetailsPage(
-                                tvId: data.results![index].id,
+                              builder: (context) => MoviesDetailsPage(
+                                id: data?.results![index].id,
                               ),
                             ),
                           );
@@ -54,7 +54,7 @@ class TVShowFutureBuilder extends StatelessWidget {
                         child: Container(
                           margin: const EdgeInsets.only(right: 10),
                           child: Image.network(
-                            'https://image.tmdb.org/t/p/w400/${data.results![index].posterPath}',
+                            'https://image.tmdb.org/t/p/w400/${data?.results![index].posterPath}',
                           ),
                         ),
                       );

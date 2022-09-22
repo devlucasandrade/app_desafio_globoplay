@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../../../models/movies/details_model.dart';
 import 'details_bottomrow.dart';
 
-class MoviesDetailsBottom extends StatelessWidget {
-  const MoviesDetailsBottom({
+class MoviesInfoContainer extends StatelessWidget {
+  const MoviesInfoContainer({
     Key? key,
     required this.filmeData,
   }) : super(key: key);

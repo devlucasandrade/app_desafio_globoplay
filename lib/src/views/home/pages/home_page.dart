@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'movies/widgets/futurebuilder.dart';
-import 'tvshows/widgets/futurebuilder.dart';
+import '../widgets/movies_futurebuilder.dart';
+import '../widgets/tvshow_futurebuilder.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

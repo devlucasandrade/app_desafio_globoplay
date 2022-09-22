@@ -22,4 +22,11 @@ class TVShowRepository {
     final tvshowResults = TvShowDetailsModel.fromJson(response.data);
     return tvshowResults;
   }
+
+  Future<TvShowModel> fetchTrending() async {
+    final response =
+        await dio.get('/trending/tv/day?api_key=$apikey&language=pt-BR');
+    final tvshow = TvShowModel.fromJson(response.data);
+    return tvshow;
+  }
 }

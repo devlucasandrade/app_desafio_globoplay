@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class DetailsButtons extends StatelessWidget {
-  const DetailsButtons({
+class MoviesButtons extends StatelessWidget {
+  const MoviesButtons({
     Key? key,
   }) : super(key: key);
 
