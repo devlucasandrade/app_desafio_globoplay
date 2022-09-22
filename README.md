@@ -17,13 +17,13 @@ Projeto para aplicação de estudo sobre consumo de API´s, visando aprender sob
 
 ## Screenshots
 <p float="left">
-  <!-- <img alt="Gif" src="/screenshots/app_desafio_globoplay.gif" width="200" />
+  <img alt="Gif" src="/screenshots/app_desafio_globoplay.gif" width="200" />
   <img alt="Gif" src="/screenshots/app_desafio_globoplay.mp4" width="200" />
   <img alt="Home Page" src="/screenshots/home_page.png" width="200" />
   <img alt="Detalhes do Filme" src="/screenshots/detalhes_do_filme_sugestoes.png" width="200" />
   <img alt="Detalhes do Filme" src="/screenshots/detalhes_do_filme_detalhes.png" width="200" />
   <img alt="Detalhes do Série" src="/screenshots/detalhes_da_serie_sugestoes.png" width="200" />
-  <img alt="Detalhes do Série" src="/screenshots/detalhes_da_serie_detalhes.png" width="200" /> -->
+  <img alt="Detalhes do Série" src="/screenshots/detalhes_da_serie_detalhes.png" width="200" />
 </p>
 <hr>
 
