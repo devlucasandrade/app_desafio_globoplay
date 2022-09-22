@@ -1,7 +1,7 @@
 import 'package:app_desafio_globoplay/src/models/tvshow/details_model.dart';
 import 'package:flutter/material.dart';
 
-import 'details_bottom_row.dart';
+import 'tvshows_details_bottom_row.dart';
 
 class TVShowDetailsBottom extends StatelessWidget {
   const TVShowDetailsBottom({

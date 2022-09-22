@@ -1,9 +1,10 @@
+import 'package:app_desafio_globoplay/src/views/movies/widgets/movies_trending_futurebuilder.dart';
 import 'package:flutter/material.dart';
 
 import '../../../models/movies/details_model.dart';
 import '../../../repository/movies_repository.dart';
-import '../widgets/info_container.dart';
-import '../widgets/details_buttons.dart';
+import '../widgets/movies_info_container.dart';
+import '../widgets/movies_details_buttons.dart';
 
 class MoviesDetailsPage extends StatefulWidget {
   const MoviesDetailsPage({
@@ -21,6 +22,7 @@ class _MoviesDetailsPageState extends State<MoviesDetailsPage>
   @override
   Widget build(BuildContext context) {
     TabController tabController = TabController(length: 2, vsync: this);
+
     return FutureBuilder<DetailsMoviesModel>(
       future: MoviesRepository().fetchDetails(widget.id),
       builder: (context, snapshot) {
@@ -64,7 +66,7 @@ class _MoviesDetailsPageState extends State<MoviesDetailsPage>
                       Container(
                         color: Colors.grey,
                         padding: const EdgeInsets.all(1),
-                        width: 140,
+                        width: 120,
                         child: Image.network(
                           'https://image.tmdb.org/t/p/w200${filmeData?.posterPath}',
                         ),
@@ -83,7 +85,6 @@ class _MoviesDetailsPageState extends State<MoviesDetailsPage>
                       ),
                       const MoviesButtons(),
                       const SizedBox(height: 20),
-                      // MoviesInfoContainer(filmeData: filmeData),
                       SizedBox(
                         child: TabBar(
                           labelColor: Colors.white,
@@ -102,10 +103,7 @@ class _MoviesDetailsPageState extends State<MoviesDetailsPage>
                           child: TabBarView(
                             controller: tabController,
                             children: [
-                              const Center(
-                                  child: Text('Trending',
-                                      style: TextStyle(
-                                          fontSize: 26, color: Colors.white))),
+                              const MoviesTrendingFutureBuilder(),
                               MoviesInfoContainer(filmeData: filmeData),
                               // Center(child: Text('Página 02')),
                             ],

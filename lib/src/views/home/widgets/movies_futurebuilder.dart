@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../models/movies/movies_model.dart';
 import '../../../repository/movies_repository.dart';
-import '../../movies/pages/details_page.dart';
+import '../../movies/pages/movies_details_page.dart';
 
 class MoviesFutureBuilder extends StatelessWidget {
   const MoviesFutureBuilder({
