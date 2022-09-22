@@ -4,9 +4,8 @@ import '../../../models/movies/details_model.dart';
 import '../../../repository/movies_repository.dart';
 import '../widgets/info_container.dart';
 import '../widgets/details_buttons.dart';
-import '../widgets/tabview_details.dart';
 
-class MoviesDetailsPage extends StatelessWidget {
+class MoviesDetailsPage extends StatefulWidget {
   const MoviesDetailsPage({
     Key? key,
     required this.id,
@@ -14,9 +13,16 @@ class MoviesDetailsPage extends StatelessWidget {
   final int? id;
 
   @override
+  State<MoviesDetailsPage> createState() => _MoviesDetailsPageState();
+}
+
+class _MoviesDetailsPageState extends State<MoviesDetailsPage>
+    with TickerProviderStateMixin {
+  @override
   Widget build(BuildContext context) {
+    TabController tabController = TabController(length: 2, vsync: this);
     return FutureBuilder<DetailsMoviesModel>(
-      future: MoviesRepository().fetchDetails(id),
+      future: MoviesRepository().fetchDetails(widget.id),
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
           return const Center(
@@ -77,8 +83,35 @@ class MoviesDetailsPage extends StatelessWidget {
                       ),
                       const MoviesButtons(),
                       const SizedBox(height: 20),
-                      MoviesInfoContainer(filmeData: filmeData),
-                      // const TabviewDetails()
+                      // MoviesInfoContainer(filmeData: filmeData),
+                      SizedBox(
+                        child: TabBar(
+                          labelColor: Colors.white,
+                          unselectedLabelColor: Colors.grey.shade600,
+                          indicatorColor: Colors.white,
+                          controller: tabController,
+                          tabs: const [
+                            Tab(text: 'ASSISTA TAMBÉM'),
+                            Tab(text: 'DETALHES'),
+                          ],
+                        ),
+                      ),
+                      Expanded(
+                        child: SizedBox(
+                          width: double.maxFinite,
+                          child: TabBarView(
+                            controller: tabController,
+                            children: [
+                              const Center(
+                                  child: Text('Trending',
+                                      style: TextStyle(
+                                          fontSize: 26, color: Colors.white))),
+                              MoviesInfoContainer(filmeData: filmeData),
+                              // Center(child: Text('Página 02')),
+                            ],
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),
