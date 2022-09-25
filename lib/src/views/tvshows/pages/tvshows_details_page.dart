@@ -4,16 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 
 import '../../../models/tvshow/tvshow_details_model.dart';
-import '../widgets/tvshows_details_bottom.dart';
+import '../widgets/tvshows_info_container.dart';
 import '../widgets/tvshows_details_buttons.dart';
 import '../widgets/tvshows_trending_futurebuilder.dart';
 
 class TVShowDetailsPage extends StatefulWidget {
   const TVShowDetailsPage({
     Key? key,
-    required this.tvId,
+    required this.id,
   }) : super(key: key);
-  final int? tvId;
+  final int? id;
 
   @override
   State<TVShowDetailsPage> createState() => _TVShowDetailsPageState();
@@ -32,7 +32,7 @@ class _TVShowDetailsPageState extends State<TVShowDetailsPage>
     );
 
     return FutureBuilder<TvShowDetailsModel>(
-      future: TVShowRepository().fetchTVShowsDetails(widget.tvId),
+      future: TVShowRepository().fetchTVShowsDetails(widget.id),
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
           return const Center(
@@ -123,7 +123,10 @@ class _TVShowDetailsPageState extends State<TVShowDetailsPage>
                           textAlign: TextAlign.center,
                         ),
                       ),
-                      const TVShowButtons(),
+                      TVShowButtons(
+                        posterPath: data.posterPath,
+                        id: data.id,
+                      ),
                       const SizedBox(height: 20),
                       SizedBox(
                         child: TabBar(
@@ -144,7 +147,7 @@ class _TVShowDetailsPageState extends State<TVShowDetailsPage>
                             controller: tabController,
                             children: [
                               const TVShowTrendingFutureBuilder(),
-                              TVShowDetailsBottom(data: data),
+                              TVShowInfoContainer(data: data),
                               // Center(child: Text('Página 02')),
                             ],
                           ),

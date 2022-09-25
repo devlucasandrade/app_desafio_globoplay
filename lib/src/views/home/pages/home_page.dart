@@ -27,7 +27,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('globloplay'),
+        title: currentIndex == 0
+            ? const Text('globloplay')
+            : const Text('Minha Lista'),
         centerTitle: true,
       ),
       body: screens[currentIndex],

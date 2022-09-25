@@ -20,56 +20,67 @@ class MoviesFavoritePage extends StatelessWidget {
       ),
     );
 
-    return Scaffold(
-      body: Container(
-        padding: const EdgeInsets.all(5),
-        child: GridView.builder(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            childAspectRatio: 1,
-            mainAxisExtent: 160,
-            crossAxisCount: 3,
-            mainAxisSpacing: 15,
-            crossAxisSpacing: 5,
-          ),
-          itemCount: provider.favoritesMovies.length,
-          itemBuilder: (context, index) {
-            final id = provider.favoritesMovies[index];
-            final posterPath = provider.posterPath[index];
-
-            return GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => MoviesDetailsPage(
-                      id: id,
-                    ),
-                  ),
-                );
-              },
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                child: CachedNetworkImage(
-                  cacheManager: customCacheManager,
-                  key: UniqueKey(),
-                  imageUrl: 'https://image.tmdb.org/t/p/w400/$posterPath',
-                  fit: BoxFit.cover,
-                  placeholder: (context, url) =>
-                      Container(color: Colors.black12),
-                  errorWidget: (context, url, error) => Container(
-                    color: Colors.black12,
-                    child: const Icon(
-                      Icons.error,
-                      color: Colors.red,
-                      size: 80,
-                    ),
-                  ),
-                ),
+    return provider.favoritesMovies.isEmpty
+        ? const Center(
+            child: Text(
+              'Lista de favoritos vazia',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 26,
               ),
-            );
-          },
-        ),
-      ),
-    );
+            ),
+          )
+        : Scaffold(
+            body: Container(
+              padding: const EdgeInsets.all(10),
+              child: GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  childAspectRatio: 1,
+                  mainAxisExtent: 180,
+                  crossAxisCount: 3,
+                  mainAxisSpacing: 15,
+                  crossAxisSpacing: 10,
+                ),
+                itemCount: provider.favoritesMovies.length,
+                itemBuilder: (context, index) {
+                  final id = provider.favoritesMovies[index];
+                  final posterPath = provider.posterPath[index];
+
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => MoviesDetailsPage(
+                            id: id,
+                          ),
+                        ),
+                      );
+                    },
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: CachedNetworkImage(
+                        cacheManager: customCacheManager,
+                        key: UniqueKey(),
+                        imageUrl: 'https://image.tmdb.org/t/p/w400/$posterPath',
+                        fit: BoxFit.cover,
+                        placeholder: (context, url) =>
+                            Container(color: Colors.black12),
+                        errorWidget: (context, url, error) => Container(
+                          color: Colors.black12,
+                          child: const Icon(
+                            Icons.error,
+                            color: Colors.red,
+                            size: 80,
+                          ),
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+          );
   }
 }

@@ -22,13 +22,13 @@ class GenreModel {
 }
 
 class Genre {
+  int? id;
+  String? name;
+
   Genre({
     this.id,
     this.name,
   });
-
-  int? id;
-  String? name;
 
   factory Genre.fromJson(Map<String, dynamic> json) => Genre(
         id: json["id"],

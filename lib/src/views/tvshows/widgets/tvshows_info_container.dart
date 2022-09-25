@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'tvshows_details_bottom_row.dart';
 
-class TVShowDetailsBottom extends StatelessWidget {
-  const TVShowDetailsBottom({
+class TVShowInfoContainer extends StatelessWidget {
+  const TVShowInfoContainer({
     Key? key,
     required this.data,
   }) : super(key: key);

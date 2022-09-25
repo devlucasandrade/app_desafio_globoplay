@@ -2,6 +2,39 @@ import '../genre_model.dart';
 import 'createdby_model.dart';
 
 class TvShowDetailsModel {
+  bool? adult;
+  String? backdropPath;
+  List<CreatedBy>? createdBy;
+  List<int>? episodeRunTime;
+  DateTime? firstAirDate;
+  List<Genre>? genres;
+  String? homepage;
+  int? id;
+  bool? inProduction;
+  List<String>? languages;
+  DateTime? lastAirDate;
+  TEpisodeToAir? lastEpisodeToAir;
+  String? name;
+  TEpisodeToAir? nextEpisodeToAir;
+  List<Network>? networks;
+  int? numberOfEpisodes;
+  int? numberOfSeasons;
+  List<String>? originCountry;
+  String? originalLanguage;
+  String? originalName;
+  String? overview;
+  double? popularity;
+  String? posterPath;
+  List<Network>? productionCompanies;
+  List<ProductionCountry>? productionCountries;
+  List<Season>? seasons;
+  List<SpokenLanguage>? spokenLanguages;
+  String? status;
+  String? tagline;
+  String? type;
+  double? voteAverage;
+  int? voteCount;
+
   TvShowDetailsModel({
     this.adult,
     this.backdropPath,
@@ -36,39 +69,6 @@ class TvShowDetailsModel {
     this.voteAverage,
     this.voteCount,
   });
-
-  bool? adult;
-  String? backdropPath;
-  List<CreatedBy>? createdBy;
-  List<int>? episodeRunTime;
-  DateTime? firstAirDate;
-  List<Genre>? genres;
-  String? homepage;
-  int? id;
-  bool? inProduction;
-  List<String>? languages;
-  DateTime? lastAirDate;
-  TEpisodeToAir? lastEpisodeToAir;
-  String? name;
-  TEpisodeToAir? nextEpisodeToAir;
-  List<Network>? networks;
-  int? numberOfEpisodes;
-  int? numberOfSeasons;
-  List<String>? originCountry;
-  String? originalLanguage;
-  String? originalName;
-  String? overview;
-  double? popularity;
-  String? posterPath;
-  List<Network>? productionCompanies;
-  List<ProductionCountry>? productionCountries;
-  List<Season>? seasons;
-  List<SpokenLanguage>? spokenLanguages;
-  String? status;
-  String? tagline;
-  String? type;
-  double? voteAverage;
-  int? voteCount;
 
   factory TvShowDetailsModel.fromJson(Map<String, dynamic> json) =>
       TvShowDetailsModel(
@@ -181,6 +181,19 @@ class TvShowDetailsModel {
 }
 
 class TEpisodeToAir {
+  DateTime? airDate;
+  int? episodeNumber;
+  int? id;
+  String? name;
+  String? overview;
+  String? productionCode;
+  int? runtime;
+  int? seasonNumber;
+  int? showId;
+  String? stillPath;
+  double? voteAverage;
+  int? voteCount;
+
   TEpisodeToAir({
     this.airDate,
     this.episodeNumber,
@@ -195,19 +208,6 @@ class TEpisodeToAir {
     this.voteAverage,
     this.voteCount,
   });
-
-  DateTime? airDate;
-  int? episodeNumber;
-  int? id;
-  String? name;
-  String? overview;
-  String? productionCode;
-  int? runtime;
-  int? seasonNumber;
-  int? showId;
-  String? stillPath;
-  double? voteAverage;
-  int? voteCount;
 
   factory TEpisodeToAir.fromJson(Map<String, dynamic> json) => TEpisodeToAir(
         airDate: DateTime.tryParse(json["air_date"]),
@@ -242,17 +242,17 @@ class TEpisodeToAir {
 }
 
 class Network {
+  int? id;
+  String? name;
+  String? logoPath;
+  String? originCountry;
+
   Network({
     this.id,
     this.name,
     this.logoPath,
     this.originCountry,
   });
-
-  int? id;
-  String? name;
-  String? logoPath;
-  String? originCountry;
 
   factory Network.fromJson(Map<String, dynamic> json) => Network(
         id: json["id"],
@@ -270,13 +270,13 @@ class Network {
 }
 
 class ProductionCountry {
+  String? iso31661;
+  String? name;
+
   ProductionCountry({
     this.iso31661,
     this.name,
   });
-
-  String? iso31661;
-  String? name;
 
   factory ProductionCountry.fromJson(Map<String, dynamic> json) =>
       ProductionCountry(
@@ -291,6 +291,14 @@ class ProductionCountry {
 }
 
 class Season {
+  DateTime? airDate;
+  int? episodeCount;
+  int? id;
+  String? name;
+  String? overview;
+  String? posterPath;
+  int? seasonNumber;
+
   Season({
     this.airDate,
     this.episodeCount,
@@ -300,14 +308,6 @@ class Season {
     this.posterPath,
     this.seasonNumber,
   });
-
-  DateTime? airDate;
-  int? episodeCount;
-  int? id;
-  String? name;
-  String? overview;
-  String? posterPath;
-  int? seasonNumber;
 
   factory Season.fromJson(Map<String, dynamic> json) => Season(
         airDate: DateTime.parse(json["air_date"]),
@@ -332,15 +332,15 @@ class Season {
 }
 
 class SpokenLanguage {
+  String? englishName;
+  String? iso6391;
+  String? name;
+
   SpokenLanguage({
     this.englishName,
     this.iso6391,
     this.name,
   });
-
-  String? englishName;
-  String? iso6391;
-  String? name;
 
   factory SpokenLanguage.fromJson(Map<String, dynamic> json) => SpokenLanguage(
         englishName: json["english_name"],

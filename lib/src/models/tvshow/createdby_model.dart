@@ -1,4 +1,10 @@
 class CreatedBy {
+  int? id;
+  String? creditId;
+  String? name;
+  int? gender;
+  String? profilePath;
+
   CreatedBy({
     this.id,
     this.creditId,
@@ -6,12 +12,6 @@ class CreatedBy {
     this.gender,
     this.profilePath,
   });
-
-  int? id;
-  String? creditId;
-  String? name;
-  int? gender;
-  String? profilePath;
 
   factory CreatedBy.fromJson(Map<String, dynamic> json) => CreatedBy(
         id: json["id"],

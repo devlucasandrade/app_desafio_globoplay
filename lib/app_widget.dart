@@ -14,9 +14,6 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => FavoritesProvider()),
-        ChangeNotifierProvider(create: (context) => DetailsMoviesModel()),
-        ChangeNotifierProvider(create: (context) => MoviesRepository()),
-        ChangeNotifierProvider(create: (context) => MoviesModel()),
       ],
       child: MaterialApp(
         title: 'Desafio Globoplay',

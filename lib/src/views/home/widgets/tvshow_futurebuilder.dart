@@ -58,7 +58,7 @@ class TVShowFutureBuilder extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                               builder: (context) => TVShowDetailsPage(
-                                tvId: data.results![index].id,
+                                id: data.results![index].id,
                               ),
                             ),
                           );

@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   final repository = TVShowRepository();
+  int tvId = 94997;
 
   test('deve trazer uma instancia de tvshow', () async {
     final tvshow = await repository.fetchTVShows();

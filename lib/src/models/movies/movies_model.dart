@@ -9,18 +9,18 @@ MoviesModel popularModelFromJson(String str) =>
 
 String popularModelToJson(MoviesModel data) => json.encode(data.toJson());
 
-class MoviesModel with ChangeNotifier {
+class MoviesModel {
+  int? page;
+  List<MoviesResult>? results;
+  int? totalPages;
+  int? totalResults;
+
   MoviesModel({
     this.page,
     this.results,
     this.totalPages,
     this.totalResults,
   });
-
-  int? page;
-  List<MoviesResult>? results;
-  int? totalPages;
-  int? totalResults;
 
   factory MoviesModel.fromJson(Map<String, dynamic> json) => MoviesModel(
         page: json["page"],

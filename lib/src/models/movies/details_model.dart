@@ -8,7 +8,30 @@ DetailsMoviesModel moviesModelFromJson(String str) =>
 
 String moviesModelToJson(DetailsMoviesModel data) => json.encode(data.toJson());
 
-class DetailsMoviesModel with ChangeNotifier {
+class DetailsMoviesModel {
+  bool? adult;
+  String? backdropPath;
+  int? budget;
+  List<Genre>? genres;
+  String? homepage;
+  int? id;
+  String? imdbId;
+  String? originalLanguage;
+  String? originalTitle;
+  String? overview;
+  double? popularity;
+  String? posterPath;
+  List<ProductionCompany>? productionCompanies;
+  DateTime? releaseDate;
+  int? revenue;
+  int? runtime;
+  String? status;
+  String? tagline;
+  String? title;
+  bool? video;
+  double? voteAverage;
+  int? voteCount;
+
   DetailsMoviesModel({
     this.adult,
     this.backdropPath,
@@ -33,29 +56,6 @@ class DetailsMoviesModel with ChangeNotifier {
     this.voteAverage,
     this.voteCount,
   });
-
-  bool? adult;
-  String? backdropPath;
-  int? budget;
-  List<Genre>? genres;
-  String? homepage;
-  int? id;
-  String? imdbId;
-  String? originalLanguage;
-  String? originalTitle;
-  String? overview;
-  double? popularity;
-  String? posterPath;
-  List<ProductionCompany>? productionCompanies;
-  DateTime? releaseDate;
-  int? revenue;
-  int? runtime;
-  String? status;
-  String? tagline;
-  String? title;
-  bool? video;
-  double? voteAverage;
-  int? voteCount;
 
   factory DetailsMoviesModel.fromJson(Map<String, dynamic> json) =>
       DetailsMoviesModel(
@@ -114,17 +114,17 @@ class DetailsMoviesModel with ChangeNotifier {
 }
 
 class ProductionCompany {
+  int? id;
+  String? logoPath;
+  String? name;
+  String? originCountry;
+
   ProductionCompany({
     this.id,
     this.logoPath,
     this.name,
     this.originCountry,
   });
-
-  int? id;
-  String? logoPath;
-  String? name;
-  String? originCountry;
 
   factory ProductionCompany.fromJson(Map<String, dynamic> json) =>
       ProductionCompany(
