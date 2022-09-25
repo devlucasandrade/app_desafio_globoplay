@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:flutter/cupertino.dart';
+
 import 'results_model.dart';
 
 MoviesModel popularModelFromJson(String str) =>
@@ -7,7 +9,7 @@ MoviesModel popularModelFromJson(String str) =>
 
 String popularModelToJson(MoviesModel data) => json.encode(data.toJson());
 
-class MoviesModel {
+class MoviesModel with ChangeNotifier {
   MoviesModel({
     this.page,
     this.results,

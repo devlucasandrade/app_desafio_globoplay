@@ -1,4 +1,9 @@
+import 'package:app_desafio_globoplay/src/models/movies/details_model.dart';
+import 'package:app_desafio_globoplay/src/models/movies/movies_model.dart';
+import 'package:app_desafio_globoplay/src/repository/movies_repository.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'src/provider/movies_provider.dart';
 import 'src/views/home/pages/home_page.dart';
 
 class MyApp extends StatelessWidget {
@@ -6,24 +11,32 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Desafio Globoplay',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        scaffoldBackgroundColor: Colors.grey.shade900,
-        appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.black,
-          titleTextStyle: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 26,
-            color: Colors.white,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => MoviesProvider()),
+        ChangeNotifierProvider(create: (context) => DetailsMoviesModel()),
+        ChangeNotifierProvider(create: (context) => MoviesRepository()),
+        ChangeNotifierProvider(create: (context) => MoviesModel()),
+      ],
+      child: MaterialApp(
+        title: 'Desafio Globoplay',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          scaffoldBackgroundColor: Colors.grey.shade900,
+          appBarTheme: const AppBarTheme(
+            backgroundColor: Colors.black,
+            titleTextStyle: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 26,
+              color: Colors.white,
+            ),
           ),
         ),
+        initialRoute: '/home',
+        routes: {
+          '/home': (context) => const HomePage(),
+        },
       ),
-      initialRoute: '/home',
-      routes: {
-        '/home': (context) => const HomePage(),
-      },
     );
   }
 }

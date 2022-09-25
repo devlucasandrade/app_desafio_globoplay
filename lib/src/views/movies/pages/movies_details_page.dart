@@ -112,7 +112,10 @@ class _MoviesDetailsPageState extends State<MoviesDetailsPage>
                           textAlign: TextAlign.center,
                         ),
                       ),
-                      const MoviesButtons(),
+                      MoviesButtons(
+                        posterPath: filmeData.posterPath,
+                        id: filmeData.id,
+                      ),
                       const SizedBox(height: 20),
                       SizedBox(
                         child: TabBar(

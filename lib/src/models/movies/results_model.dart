@@ -1,4 +1,19 @@
 class MoviesResult {
+  String? backdropPath;
+  List<int>? genreIds;
+  int? id;
+  String? mediaType;
+  String? originalLanguage;
+  String? originalTitle;
+  String? overview;
+  double? popularity;
+  String? posterPath;
+  DateTime? releaseDate;
+  String? title;
+  bool? video;
+  double? voteAverage;
+  int? voteCount;
+
   MoviesResult({
     this.backdropPath,
     this.genreIds,
@@ -15,21 +30,6 @@ class MoviesResult {
     this.voteAverage,
     this.voteCount,
   });
-
-  String? backdropPath;
-  List<int>? genreIds;
-  int? id;
-  String? mediaType;
-  String? originalLanguage;
-  String? originalTitle;
-  String? overview;
-  double? popularity;
-  String? posterPath;
-  DateTime? releaseDate;
-  String? title;
-  bool? video;
-  double? voteAverage;
-  int? voteCount;
 
   factory MoviesResult.fromJson(Map<String, dynamic> json) => MoviesResult(
         backdropPath: json["backdrop_path"],

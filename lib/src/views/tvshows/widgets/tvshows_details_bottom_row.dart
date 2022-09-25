@@ -1,4 +1,4 @@
-import 'package:app_desafio_globoplay/src/models/tvshow/details_model.dart';
+import 'package:app_desafio_globoplay/src/models/tvshow/tvshow_details_model.dart';
 import 'package:flutter/material.dart';
 
 class TVShowDetailsBottomRow extends StatelessWidget {

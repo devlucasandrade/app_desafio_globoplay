@@ -9,7 +9,7 @@ import '../models/movies/movies_model.dart';
 final apikey = ApiKey().apiKey;
 final dio = ApiService().dio;
 
-class MoviesRepository {
+class MoviesRepository with ChangeNotifier {
   Future<MoviesModel> fetchMovies() async {
     try {
       final response =

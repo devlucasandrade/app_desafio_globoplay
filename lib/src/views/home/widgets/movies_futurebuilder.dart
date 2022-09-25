@@ -38,7 +38,7 @@ class MoviesFutureBuilder extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
-                  'Filmes Populares',
+                  'Filmes',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 26,

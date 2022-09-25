@@ -1,12 +1,20 @@
+import 'package:app_desafio_globoplay/src/provider/movies_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class MoviesButtons extends StatelessWidget {
   const MoviesButtons({
     Key? key,
+    this.posterPath,
+    this.id,
   }) : super(key: key);
+  final String? posterPath;
+  final int? id;
 
   @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<MoviesProvider>(context);
+
     return Row(
       children: [
         Expanded(
@@ -47,19 +55,19 @@ class MoviesButtons extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
-            onPressed: () {},
+            onPressed: () {
+              provider.toggleFavoriteMovie(id!, posterPath!);
+            },
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 13),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Icon(
-                    Icons.star,
-                    size: 20,
-                    color: Colors.white,
-                  ),
-                  SizedBox(width: 10),
-                  Text(
+                children: [
+                  provider.ifExist(id!)
+                      ? const Icon(Icons.check, size: 20, color: Colors.white)
+                      : const Icon(Icons.star, size: 20, color: Colors.white),
+                  const SizedBox(width: 10),
+                  const Text(
                     'Minha Lista',
                     style: TextStyle(
                       color: Colors.white,

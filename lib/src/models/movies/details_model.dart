@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter/cupertino.dart';
 
 import '../genre_model.dart';
 
@@ -7,7 +8,7 @@ DetailsMoviesModel moviesModelFromJson(String str) =>
 
 String moviesModelToJson(DetailsMoviesModel data) => json.encode(data.toJson());
 
-class DetailsMoviesModel {
+class DetailsMoviesModel with ChangeNotifier {
   DetailsMoviesModel({
     this.adult,
     this.backdropPath,

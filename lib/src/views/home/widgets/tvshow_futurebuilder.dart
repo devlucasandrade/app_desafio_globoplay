@@ -38,7 +38,7 @@ class TVShowFutureBuilder extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
-                  'Séries Populares',
+                  'Séries',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 26,
