@@ -3,7 +3,7 @@ import 'package:app_desafio_globoplay/src/models/movies/movies_model.dart';
 import 'package:app_desafio_globoplay/src/repository/movies_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'src/provider/movies_provider.dart';
+import 'src/provider/favorites_provider.dart';
 import 'src/views/home/pages/home_page.dart';
 
 class MyApp extends StatelessWidget {
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (context) => MoviesProvider()),
+        ChangeNotifierProvider(create: (context) => FavoritesProvider()),
         ChangeNotifierProvider(create: (context) => DetailsMoviesModel()),
         ChangeNotifierProvider(create: (context) => MoviesRepository()),
         ChangeNotifierProvider(create: (context) => MoviesModel()),

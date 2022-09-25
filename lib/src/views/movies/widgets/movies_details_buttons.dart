@@ -1,4 +1,4 @@
-import 'package:app_desafio_globoplay/src/provider/movies_provider.dart';
+import 'package:app_desafio_globoplay/src/provider/favorites_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -13,7 +13,7 @@ class MoviesButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<MoviesProvider>(context);
+    final provider = Provider.of<FavoritesProvider>(context);
 
     return Row(
       children: [

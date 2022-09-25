@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:provider/provider.dart';
 
-import '../../../provider/movies_provider.dart';
-import 'movies_details_page.dart';
+import '../../../provider/favorites_provider.dart';
+import '../../movies/pages/movies_details_page.dart';
 
 class MoviesFavoritePage extends StatelessWidget {
   const MoviesFavoritePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<MoviesProvider>(context);
+    final provider = Provider.of<FavoritesProvider>(context);
 
     final customCacheManager = CacheManager(
       Config(

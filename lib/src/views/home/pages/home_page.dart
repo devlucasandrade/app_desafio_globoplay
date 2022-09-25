@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../movies/pages/movies_favorite_page.dart';
+import 'favorites_page.dart';
 import '../widgets/movies_futurebuilder.dart';
 import '../widgets/tvshow_futurebuilder.dart';
 
