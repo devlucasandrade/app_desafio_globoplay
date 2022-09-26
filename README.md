@@ -48,6 +48,6 @@ Estou realizando esse projeto visando estudo e aplicação com layout pré-defin
 - Abaixo deixo também o link que contém esse e outros desafios interessantes para por em prática os estudos.<br>
 - Não foram utilizados os ícones passados como imagem, pois eles estão disponíveis no flutter como nativos, facilitando a programação e uso.<br>
 
-- Link do desafio - https://github.com/globoi/globoplay-desafio-mobile<br>
-- Link da API - https://www.themoviedb.org/documentation/api<br>
-- Link com todos os desafios - https://github.com/devlucasandrade/mobile-challenges
+Link do desafio - https://github.com/globoi/globoplay-desafio-mobile<br>
+Link da API - https://www.themoviedb.org/documentation/api<br>
+Link com todos os desafios - https://github.com/devlucasandrade/mobile-challenges
