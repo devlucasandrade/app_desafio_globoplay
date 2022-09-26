@@ -25,7 +25,8 @@ Acredito que dentro desse primeiro trecho de features solicitadas, tenha consegu
 - Detalhes do filme;
 - Favoritar/Desfavoritar filmes;
 - Layout estruturado;
-- Tratamento de erro. (Possui Retorno da API com informações ao dev - Pendente celular sem internet) 
+- Tratamento de erro. (Possui Retorno da API com informações ao dev - Pendente celular sem internet)
+<hr>
 
 
 ## Screenshots
