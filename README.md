@@ -50,5 +50,4 @@ Abaixo deixo também o link que contém esse e outros desafios interessantes par
 
 Link do desafio - https://github.com/globoi/globoplay-desafio-mobile<br>
 Link da API - https://www.themoviedb.org/documentation/api<br>
-Link com todos os desafios - https://github.com/devlucasandrade/mobile-challenges
-git 
+Link com todos os desafios - https://github.com/devlucasandrade/mobile-challenges 
