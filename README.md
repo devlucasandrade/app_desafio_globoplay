@@ -25,7 +25,8 @@ Acredito que dentro desse primeiro trecho de features solicitadas, tenha consegu
 - Detalhes do filme;
 - Favoritar/Desfavoritar filmes;
 - Layout estruturado;
-- Tratamento de erro. (Possui Retorno da API com informações ao dev - Pendente celular sem internet) 
+- Tratamento de erro. (Possui Retorno da API com informações ao dev - Pendente celular sem internet)
+<hr>
 
 
 ## Screenshots
@@ -44,9 +45,9 @@ Acredito que dentro desse primeiro trecho de features solicitadas, tenha consegu
 ## Observações
 
 Estou realizando esse projeto visando estudo e aplicação com layout pré-definido, para consumo de API do The MovieDB e apresentação de dados, bem como outras funcionalidades que serão incluídas no decorrer da realização do projeto, bem como listadas no link do desafio.<br>
-- Abaixo deixo também o link que contém esse e outros desafios interessantes para por em prática os estudos.<br>
-- Não foram utilizados os ícones passados como imagem, pois eles estão disponíveis no flutter como nativos, facilitando a programação e uso.<br>
+Não foram utilizados os ícones passados como imagem, pois eles estão disponíveis no flutter como nativos, facilitando a programação e uso.<br>
+Abaixo deixo também o link que contém esse e outros desafios interessantes para por em prática os estudos.<br>
 
-- Link do desafio - https://github.com/globoi/globoplay-desafio-mobile<br>
-- Link da API - https://www.themoviedb.org/documentation/api<br>
-- Link com todos os desafios - https://github.com/devlucasandrade/mobile-challenges
+Link do desafio - https://github.com/globoi/globoplay-desafio-mobile<br>
+Link da API - https://www.themoviedb.org/documentation/api<br>
+Link com todos os desafios - https://github.com/devlucasandrade/mobile-challenges
