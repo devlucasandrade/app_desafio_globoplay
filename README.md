@@ -1,4 +1,4 @@
-# app_desafio_globoplay
+# app_movie
 
 Projeto em desenvolvimento, visando estudo e aplicação de conhecimentos, baseado no Desafio Globoplay Mobile.
 
@@ -17,12 +17,13 @@ Projeto para aplicação de estudo sobre consumo de API´s, visando aprender sob
 
 ## Screenshots
 <p float="left">
-  <!-- <img alt="Gif" src="/screenshots/app_desafio_globoplay.gif" width="200" />
+  <img alt="Gif" src="/screenshots/app_movie.gif" width="200" />
   <img alt="Home Page" src="/screenshots/home_page.png" width="200" />
+  <img alt="Favoritos Page" src="/screenshots/lista_favoritos.png" width="200" />
   <img alt="Detalhes do Filme" src="/screenshots/detalhes_do_filme_sugestoes.png" width="200" />
   <img alt="Detalhes do Filme" src="/screenshots/detalhes_do_filme_detalhes.png" width="200" />
   <img alt="Detalhes do Série" src="/screenshots/detalhes_da_serie_sugestoes.png" width="200" />
-  <img alt="Detalhes do Série" src="/screenshots/detalhes_da_serie_detalhes.png" width="200" /> -->
+  <img alt="Detalhes do Série" src="/screenshots/detalhes_da_serie_detalhes.png" width="200" />
 </p>
 <hr>
 

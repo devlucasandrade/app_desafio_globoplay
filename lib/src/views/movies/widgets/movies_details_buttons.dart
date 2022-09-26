@@ -1,4 +1,4 @@
-import 'package:app_desafio_globoplay/src/provider/favorites_provider.dart';
+import 'package:app_movie/src/provider/favorites_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

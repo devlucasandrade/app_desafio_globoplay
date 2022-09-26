@@ -1,4 +1,4 @@
-import 'package:app_desafio_globoplay/src/repository/tvshow_repository.dart';
+import 'package:app_movie/src/repository/tvshow_repository.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

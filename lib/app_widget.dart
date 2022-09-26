@@ -1,6 +1,3 @@
-import 'package:app_desafio_globoplay/src/models/movies/details_model.dart';
-import 'package:app_desafio_globoplay/src/models/movies/movies_model.dart';
-import 'package:app_desafio_globoplay/src/repository/movies_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'src/provider/favorites_provider.dart';

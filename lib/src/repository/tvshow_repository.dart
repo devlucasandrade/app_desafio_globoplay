@@ -1,5 +1,5 @@
-import 'package:app_desafio_globoplay/src/keys/api_key.dart';
-import 'package:app_desafio_globoplay/src/service/api_service.dart';
+import 'package:app_movie/src/keys/api_key.dart';
+import 'package:app_movie/src/service/api_service.dart';
 
 import '../models/tvshow/tvshow_details_model.dart';
 import '../models/tvshow/tvshow_model.dart';

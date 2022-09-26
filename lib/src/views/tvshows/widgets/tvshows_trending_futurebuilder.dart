@@ -1,5 +1,5 @@
-import 'package:app_desafio_globoplay/src/models/tvshow/tvshow_model.dart';
-import 'package:app_desafio_globoplay/src/repository/tvshow_repository.dart';
+import 'package:app_movie/src/models/tvshow/tvshow_model.dart';
+import 'package:app_movie/src/repository/tvshow_repository.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';

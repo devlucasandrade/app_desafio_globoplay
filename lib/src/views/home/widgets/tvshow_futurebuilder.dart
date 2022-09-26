@@ -1,4 +1,4 @@
-import 'package:app_desafio_globoplay/src/repository/tvshow_repository.dart';
+import 'package:app_movie/src/repository/tvshow_repository.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
@@ -24,9 +24,9 @@ class TVShowFutureBuilder extends StatelessWidget {
       future: TVShowRepository().fetchTVShows(),
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
-          return Container(
+          return const SizedBox(
             height: 200,
-            child: const Center(
+            child: Center(
               child: CircularProgressIndicator(),
             ),
           );

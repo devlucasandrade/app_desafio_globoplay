@@ -24,9 +24,9 @@ class MoviesFutureBuilder extends StatelessWidget {
       future: MoviesRepository().fetchMovies(),
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
-          return Container(
+          return const SizedBox(
             height: 200,
-            child: const Center(
+            child: Center(
               child: CircularProgressIndicator(),
             ),
           );

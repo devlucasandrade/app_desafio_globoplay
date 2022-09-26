@@ -257,14 +257,14 @@ class Network {
   factory Network.fromJson(Map<String, dynamic> json) => Network(
         id: json["id"],
         name: json["name"],
-        logoPath: json["logo_path"] == null ? null : json["logo_path"],
+        logoPath: json["logo_path"],
         originCountry: json["origin_country"],
       );
 
   Map<String, dynamic> toJson() => {
         "id": id,
         "name": name,
-        "logo_path": logoPath == null ? null : logoPath,
+        "logo_path": logoPath,
         "origin_country": originCountry,
       };
 }

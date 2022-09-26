@@ -1,7 +1,5 @@
 import 'dart:convert';
 
-import 'package:flutter/cupertino.dart';
-
 import 'results_model.dart';
 
 MoviesModel popularModelFromJson(String str) =>
