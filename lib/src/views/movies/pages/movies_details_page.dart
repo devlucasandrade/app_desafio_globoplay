@@ -1,3 +1,4 @@
+import 'package:app_movie/src/models/movies/movies_model.dart';
 import 'package:app_movie/src/views/movies/widgets/movies_trending_futurebuilder.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -100,9 +101,9 @@ class _MoviesDetailsPageState extends State<MoviesDetailsPage>
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 20),
+                        padding: const EdgeInsets.only(top: 20, bottom: 5),
                         child: Text(
-                          filmeData!.title.toString(),
+                          '${filmeData!.title}',
                           style: const TextStyle(
                             color: Colors.white,
                             fontSize: 24,
@@ -111,9 +112,21 @@ class _MoviesDetailsPageState extends State<MoviesDetailsPage>
                           textAlign: TextAlign.center,
                         ),
                       ),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 10),
+                        child: Text(
+                          '${filmeData.tagline}',
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 14,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
                       MoviesButtons(
                         posterPath: filmeData.posterPath,
                         id: filmeData.id,
+                        type: 'filme',
                       ),
                       const SizedBox(height: 20),
                       SizedBox(

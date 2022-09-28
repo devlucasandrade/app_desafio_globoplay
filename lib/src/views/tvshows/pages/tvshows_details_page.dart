@@ -125,6 +125,7 @@ class _TVShowDetailsPageState extends State<TVShowDetailsPage>
                       TVShowButtons(
                         posterPath: data.posterPath,
                         id: data.id,
+                        type: 'serie',
                       ),
                       const SizedBox(height: 20),
                       SizedBox(

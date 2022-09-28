@@ -1,3 +1,4 @@
+import 'package:app_movie/src/views/tvshows/pages/tvshows_details_page.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
@@ -46,18 +47,26 @@ class MoviesFavoritePage extends StatelessWidget {
                 itemBuilder: (context, index) {
                   final id = provider.favoritesMovies[index];
                   final posterPath = provider.posterPath[index];
+                  final type = provider.type[index];
 
                   return GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => MoviesDetailsPage(
-                            id: id,
-                          ),
-                        ),
-                      );
-                    },
+                    onTap: type == 'filme'
+                        ? () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => MoviesDetailsPage(
+                                  id: id,
+                                ),
+                              ),
+                            )
+                        : () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => TVShowDetailsPage(
+                                  id: id,
+                                ),
+                              ),
+                            ),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(10),
                       child: CachedNetworkImage(

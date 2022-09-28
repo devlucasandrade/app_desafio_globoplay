@@ -7,10 +7,12 @@ class TVShowButtons extends StatelessWidget {
   const TVShowButtons({
     Key? key,
     this.posterPath,
+    this.type,
     this.id,
   }) : super(key: key);
   final String? posterPath;
   final int? id;
+  final String? type;
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +59,7 @@ class TVShowButtons extends StatelessWidget {
               ),
             ),
             onPressed: () {
-              provider.toggleFavoriteMovie(id!, posterPath!);
+              provider.toggleFavoriteMovie(id!, posterPath!, type!);
             },
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 13),
