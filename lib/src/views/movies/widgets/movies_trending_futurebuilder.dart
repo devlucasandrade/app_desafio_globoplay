@@ -5,6 +5,7 @@ import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import '../../../models/movies/movies_model.dart';
 import '../../../repository/movies_repository.dart';
 import '../pages/movies_details_page.dart';
+import '../../components/shimmer_trending.dart';
 
 class MoviesTrendingFutureBuilder extends StatelessWidget {
   const MoviesTrendingFutureBuilder({
@@ -24,9 +25,7 @@ class MoviesTrendingFutureBuilder extends StatelessWidget {
       future: MoviesRepository().fetchTrending(),
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
-          return const Center(
-            child: CircularProgressIndicator(),
-          );
+          return const ShimmerTrending();
         } else {
           final data = snapshot.data;
           return Padding(

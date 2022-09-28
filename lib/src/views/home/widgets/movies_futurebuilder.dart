@@ -5,6 +5,7 @@ import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import '../../../models/movies/movies_model.dart';
 import '../../../repository/movies_repository.dart';
 import '../../movies/pages/movies_details_page.dart';
+import 'shimmer_load.dart';
 
 class MoviesFutureBuilder extends StatelessWidget {
   const MoviesFutureBuilder({
@@ -24,12 +25,7 @@ class MoviesFutureBuilder extends StatelessWidget {
       future: MoviesRepository().fetchMovies(),
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
-          return const SizedBox(
-            height: 200,
-            child: Center(
-              child: CircularProgressIndicator(),
-            ),
-          );
+          return const ShimmerLoad();
         } else {
           final data = snapshot.data;
           return Padding(

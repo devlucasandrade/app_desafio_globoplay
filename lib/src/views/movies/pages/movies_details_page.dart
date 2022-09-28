@@ -7,6 +7,7 @@ import '../../../models/movies/details_model.dart';
 import '../../../repository/movies_repository.dart';
 import '../widgets/movies_info_container.dart';
 import '../widgets/movies_details_buttons.dart';
+import '../../components/shimmer_details.dart';
 
 class MoviesDetailsPage extends StatefulWidget {
   const MoviesDetailsPage({
@@ -35,9 +36,7 @@ class _MoviesDetailsPageState extends State<MoviesDetailsPage>
       future: MoviesRepository().fetchDetails(widget.id),
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
-          return const Center(
-            child: CircularProgressIndicator(),
-          );
+          return const ShimmerDetails();
         } else {
           final filmeData = snapshot.data;
           return Container(

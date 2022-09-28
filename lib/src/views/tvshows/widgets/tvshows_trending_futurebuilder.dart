@@ -4,6 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 
+import '../../components/shimmer_trending.dart';
 import '../pages/tvshows_details_page.dart';
 
 class TVShowTrendingFutureBuilder extends StatelessWidget {
@@ -24,9 +25,7 @@ class TVShowTrendingFutureBuilder extends StatelessWidget {
       future: TVShowRepository().fetchTrending(),
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
-          return const Center(
-            child: CircularProgressIndicator(),
-          );
+          return const ShimmerTrending();
         } else {
           final data = snapshot.data;
           return Padding(

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 
 import '../../../models/tvshow/tvshow_details_model.dart';
+import '../../components/shimmer_details.dart';
 import '../widgets/tvshows_info_container.dart';
 import '../widgets/tvshows_details_buttons.dart';
 import '../widgets/tvshows_trending_futurebuilder.dart';
@@ -35,9 +36,7 @@ class _TVShowDetailsPageState extends State<TVShowDetailsPage>
       future: TVShowRepository().fetchTVShowsDetails(widget.id),
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
-          return const Center(
-            child: CircularProgressIndicator(),
-          );
+          return const ShimmerDetails();
         } else {
           final data = snapshot.data;
           return Container(

@@ -5,6 +5,7 @@ import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 
 import '../../../models/tvshow/tvshow_model.dart';
 import '../../tvshows/pages/tvshows_details_page.dart';
+import 'shimmer_load.dart';
 
 class TVShowFutureBuilder extends StatelessWidget {
   const TVShowFutureBuilder({
@@ -24,12 +25,7 @@ class TVShowFutureBuilder extends StatelessWidget {
       future: TVShowRepository().fetchTVShows(),
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
-          return const SizedBox(
-            height: 200,
-            child: Center(
-              child: CircularProgressIndicator(),
-            ),
-          );
+          return const ShimmerLoad();
         } else {
           final data = snapshot.data;
           return Padding(

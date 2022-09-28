@@ -10,7 +10,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (context) => FavoritesProvider()),
+        ChangeNotifierProvider(
+          create: (context) => FavoritesProvider(),
+        ),
       ],
       child: MaterialApp(
         title: 'Desafio Globoplay',
