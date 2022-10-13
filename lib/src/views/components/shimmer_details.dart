@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
+import 'shimmer_trending.dart';
+
 class ShimmerDetails extends StatelessWidget {
   const ShimmerDetails({Key? key}) : super(key: key);
 
@@ -93,20 +95,8 @@ class ShimmerDetails extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 40),
-                Shimmer.fromColors(
-                  baseColor: Colors.grey[500]!,
-                  highlightColor: Colors.grey[100]!,
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    width: double.infinity,
-                    height: 250,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                  ),
-                ),
+                const SizedBox(height: 80),
+                const ShimmerTrending(),
               ],
             ),
           ),
